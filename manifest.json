@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Brightspace Groups Tool Helper",
+  "version": "1.0",
+  "author": "Kap Thang (University of Windsor)",
+  "description": "This extension shows extra checkboxes in the Brightspace Groups Tool to allow you to select multiple users at once.",
+  "icons": {
+    "16": "/images/icon16.png",
+    "48": "/images/icon48.png",
+    "128": "/images/icon128.png"
+  },
+  "permissions": ["activeTab", "storage", "declarativeContent"],
+
+  "content_scripts": [
+    {
+      "matches": ["https://brightspace.uwindsor.ca/d2l/lms/group/group_enroll.d2l?ou=*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ]
+}
